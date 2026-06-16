@@ -3,11 +3,12 @@ import * as THREE from 'three/webgpu'
 import { attribute, float, texture, vec3 } from 'three/tsl'
 import type { MaterialSlot, MaterialVariant } from '../kit/kit-types'
 
+const base = import.meta.env.BASE_URL
 const textureUrls = {
-  limestone: '/assets/financial-core/limestone-albedo.png',
-  limestoneNormal: '/assets/financial-core/limestone-normal.png',
-  ornaments: '/assets/financial-core/ornaments-albedo.png',
-  ornamentsNormal: '/assets/financial-core/ornaments-normal.png',
+  limestone: `${base}assets/financial-core/limestone-albedo.png`,
+  limestoneNormal: `${base}assets/financial-core/limestone-normal.png`,
+  ornaments: `${base}assets/financial-core/ornaments-albedo.png`,
+  ornamentsNormal: `${base}assets/financial-core/ornaments-normal.png`,
 }
 
 export type MaterialMap = Record<MaterialSlot, THREE.Material>
