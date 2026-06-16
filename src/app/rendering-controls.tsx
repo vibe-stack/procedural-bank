@@ -4,6 +4,16 @@ import { renderingState } from '../state/rendering-state'
 
 export function RenderingControls() {
   useControls('Rendering', {
+    dpr: {
+      value: renderingState.dpr,
+      min: 0.5,
+      max: 2,
+      step: 0.5,
+      label: 'DPR',
+      onChange: (value: number) => {
+        renderingState.dpr = value
+      },
+    },
     postProcessing: {
       value: renderingState.postProcessing.enabled,
       label: 'Post',

@@ -3,6 +3,7 @@ import type { PostProcessingFeatures } from '../scene/post-processing/post-proce
 import type { LutPresetName, ToneMappingModeName } from '../scene/post-processing/color-grading'
 
 export type RenderingState = {
+  dpr: number
   postProcessing: {
     enabled: boolean
   }
@@ -44,13 +45,14 @@ export type RenderingState = {
 }
 
 export const renderingState = proxy<RenderingState>({
+  dpr: 1,
   postProcessing: {
-    enabled: false,
+    enabled: true,
   },
   environment: {
-    showBackground: false,
-    environmentIntensity: 0,
-    backgroundIntensity: 0,
+    showBackground: true,
+    environmentIntensity: 0.32,
+    backgroundIntensity: 0.45,
   },
   bloom: {
     enabled: false,

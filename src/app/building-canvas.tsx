@@ -17,9 +17,10 @@ declare module '@react-three/fiber' {
 extend(THREE as never)
 
 export function BuildingCanvas() {
+  const { dpr } = useSnapshot(renderingState)
   return (
     <Canvas
-      dpr={1}
+      dpr={dpr}
       shadows
       gl={async (props) => {
         const renderer = new THREE.WebGPURenderer({
